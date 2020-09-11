@@ -9,8 +9,6 @@ services:
             - "8000:80"
             - "3000:443"
         configs:
-            - source: index_test
-              target: /var/www/html/index.php
             - source: nginx_default
               target: /etc/nginx/conf.d/default.conf
             - source: nginx_default_template
@@ -77,9 +75,6 @@ configs:
         external: true
     nginx_default_template:
         #file: ./etc/nginx/default.template.conf
-        external: true
-    php_ini:
-        #file: ./etc/php/php.ini
         external: true
 secrets:
     nginx_host:
